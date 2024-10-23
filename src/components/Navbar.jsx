@@ -6,20 +6,15 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [scrollTimeout, setScrollTimeout] = useState(null);
 
   useEffect(() => {
     // Function to check if the screen width is mobile
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Tailwind's md breakpoint is 768px
+      setIsMobile(window.innerWidth < 768);
     };
 
-    // Add event listener to check screen size on resize
     window.addEventListener("resize", checkIsMobile);
-
-    // Initial check
     checkIsMobile();
-
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
@@ -27,6 +22,7 @@ const Navbar = () => {
     const handleScroll = () => {
       const sections = ["hero", "details", "gallery", "footer"];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
+
       for (let section of sections) {
         const element = document.getElementById(section);
         if (element && element.offsetTop <= scrollPosition) {
@@ -46,40 +42,21 @@ const Navbar = () => {
     { label: "Footer", id: "footer" },
   ];
 
-  // Menu variants for mobile animation
-  const menuVariants = {
-    open: { opacity: 1, y: 0 },
-    closed: { opacity: 0, y: "-100%" },
-  };
-
   const handleScrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: "smooth" });
-
-      // Clear any existing timeout to avoid conflicts
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-
-      // Set a timeout to update the active section after the scroll
-      const timeoutId = setTimeout(() => {
-        setActiveSection(sectionId); // Update the active section after scroll
-      }, 300); // Adjust the delay if needed
-
-      setScrollTimeout(timeoutId); // Store the timeout ID
+      setActiveSection(sectionId);
     }
-    setMenuOpen(false); // Close the menu after clicking
+    setMenuOpen(false);
   };
 
   return (
-    <nav className="fixed w-full bg-[#FCECDD] shadow-md z-10">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        {/* Logo */}
-        <div className="text-2xl font-bold text-[#FF6701]">
+    <nav className="fixed w-full bg-[#FCECDD] shadow-md z-10 transition-all duration-300">
+      <div className="container flex items-center justify-between p-2 mx-auto">
+        <div className="text-xl font-bold text-[#FF6701]">
           Wedding Invitation
         </div>
-
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
@@ -89,13 +66,13 @@ const Navbar = () => {
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
         {/* Navigation Menu */}
         {isMobile ? (
           <motion.ul
             initial={false}
-            animate={menuOpen ? "open" : "closed"}
-            variants={menuVariants}
+            animate={
+              menuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: "-100%" }
+            }
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className={`${
               menuOpen ? "block" : "hidden"
@@ -106,10 +83,10 @@ const Navbar = () => {
                 <a
                   href={`#${item.id}`}
                   onClick={(e) => {
-                    e.preventDefault(); // Prevent default anchor jump behavior
+                    e.preventDefault();
                     handleScrollToSection(item.id);
                   }}
-                  className={`block px-4 py-2 text-lg ${
+                  className={`block px-2 py-1 text-base transition-all duration-300 ${
                     activeSection === item.id
                       ? "text-[#FF6701]"
                       : "text-[#FEA82F]"
@@ -121,10 +98,9 @@ const Navbar = () => {
                   <motion.div
                     layoutId="underline"
                     className="absolute left-0 right-0 mx-auto h-1 bg-[#FFC288] rounded top-full"
-                    style={{ maxWidth: "100%", width: "auto" }}
                     initial={{ width: 0 }}
                     animate={{ width: "100%" }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
                   />
                 )}
               </li>
@@ -137,10 +113,10 @@ const Navbar = () => {
                 <a
                   href={`#${item.id}`}
                   onClick={(e) => {
-                    e.preventDefault(); // Prevent default anchor jump behavior
+                    e.preventDefault();
                     handleScrollToSection(item.id);
                   }}
-                  className={`block px-4 py-2 text-lg ${
+                  className={`block px-2 py-1 text-base transition-all duration-300 ${
                     activeSection === item.id
                       ? "text-[#FF6701]"
                       : "text-[#FEA82F]"
@@ -149,7 +125,13 @@ const Navbar = () => {
                   {item.label}
                 </a>
                 {activeSection === item.id && (
-                  <div className="absolute left-0 right-0 mx-auto h-1 bg-[#FFC288] rounded top-full" />
+                  <motion.div
+                    layoutId="underline"
+                    className="absolute left-0 right-0 mx-auto h-1 bg-[#FFC288] rounded top-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  />
                 )}
               </li>
             ))}
