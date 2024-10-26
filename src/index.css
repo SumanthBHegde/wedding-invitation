@@ -1,3 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Mantra&family=Krishna&family=Caligraf:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-custom-gradient {
+  background: linear-gradient(to right, #f6debd, #f9dbbd, #f1bab7);
+  background-size: 100% 100%;
+}
+
+:root {
+  --maroon-color: #b20c0c;
+  --dark-maroon: #940000; /* Darker shade for outline */
+}
+
+/* Main font style */
+.font-main {
+  font-family: "Mantra";
+  color: var(--maroon-color);
+  text-shadow: 1px 1px 2px var(--dark-maroon);
+  outline-offset: 2px;
+}
+
+/* Medium font style */
+.font-mid {
+  font-family: "Krishna";
+  color: var(--maroon-color);
+  text-shadow: 1px 1px 2px var(--dark-maroon);
+  outline-offset: 2px;
+}
+
+/* Small font style */
+.font-mini {
+  font-family: "Caligraf";
+  color: var(--maroon-color);
+  text-shadow: 1px 1px 2px var(--dark-maroon);
+  outline-offset: 2px;
+}

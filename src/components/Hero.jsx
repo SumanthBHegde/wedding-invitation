@@ -3,8 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ReactLenis } from "lenis/dist/lenis-react";
 import HeroWeddingInvite from "./HeroWeddingInvite";
 
-import mobileForegroundImg from "../assets/wedding_avatar_bgrm.png";
-import mobileBackgroundImg from "../assets/wedding_background3.png";
+import {
+  weddingAvatarBgrm as mobileForegroundImg,
+  weddingBackground3 as mobileBackgroundImg,
+} from "../assets/assets.js";
 
 const SECTION_HEIGHT_LAPTOP = 800;
 const SECTION_HEIGHT_MOBILE = 300;
@@ -47,7 +49,7 @@ const MobileHero = ({ sectionHeight }) => {
         endY={startYMobile - 50} // Subtle movement
         className="w-auto mx-auto h-[400px]"
       />
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-[#FCECDD]/0 to-[#FFC288]" />
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-[#FCECDD]/0 to-[#FFC288]" />
     </div>
   );
 };

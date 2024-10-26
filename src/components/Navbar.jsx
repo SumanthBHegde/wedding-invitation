@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Function to check if the screen width is mobile
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -20,15 +19,18 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "details", "gallery", "footer"];
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const sections = ["hero", "details", "gallery", "map", "footer"];
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
 
+      // Find the nearest section to scroll position
+      let nearestSection = "";
       for (let section of sections) {
         const element = document.getElementById(section);
         if (element && element.offsetTop <= scrollPosition) {
-          setActiveSection(section);
+          nearestSection = section;
         }
       }
+      setActiveSection(nearestSection);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -39,7 +41,7 @@ const Navbar = () => {
     { label: "Home", id: "hero" },
     { label: "Wedding Details", id: "details" },
     { label: "Gallery", id: "gallery" },
-    { label: "Footer", id: "footer" },
+    { label: "Direction", id: "map" },
   ];
 
   const handleScrollToSection = (sectionId) => {
@@ -57,7 +59,6 @@ const Navbar = () => {
         <div className="text-xl font-bold text-[#FF6701]">
           Wedding Invitation
         </div>
-        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -66,7 +67,7 @@ const Navbar = () => {
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-        {/* Navigation Menu */}
+
         {isMobile ? (
           <motion.ul
             initial={false}

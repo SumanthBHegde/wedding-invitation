@@ -2,23 +2,36 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import "./index.css";
 import HeroComponent from "./components/Hero";
+import WeddingInviteDetails from "./components/WeddingInviteDetails";
+import CollageSection from "./components/CollageSection";
+import MapSection from "./components/MapSection";
 
 function App() {
   return (
-    <div className="App bg-gradient-to-b from-[#FCECDD] via-[#FFC288] to-[#FF6701]">
+    <div className="min-h-screen App bg-custom-gradient">
       <Navbar />
       {/* Sections for hero, details, gallery, and footer */}
-      <section id="hero" className="min-h-screen">
+      <section id="hero" className="min-h-screen mx-2">
         <HeroComponent />
       </section>
-      <section id="details" className="min-h-screen bg-gray-200">
-        <h1 className="py-20 text-4xl text-center">Wedding Details</h1>
+      <div className="h-20" />
+
+      <section id="details" className="min-h-screen mx-2">
+        <WeddingInviteDetails />
       </section>
-      <section id="gallery" className="min-h-screen bg-gray-300">
-        <h1 className="py-20 text-4xl text-center">Gallery</h1>
+      <div className="h-20" />
+
+      <section id="gallery" className="min-h-screen mx-2">
+        <CollageSection />
       </section>
-      <footer id="footer" className="min-h-screen bg-gray-400">
-        <h1 className="py-20 text-4xl text-center">Footer</h1>
+      <div className="h-20" />
+
+      <section id="map" className="min-h-screen mx-2">
+        <MapSection />
+      </section>
+
+      <footer className="bg-gradient-to-b from-[#FCECDD]/0 to-[#FFC288]">
+        <h1 className="py-20 text-4xl text-center"></h1>
       </footer>
     </div>
   );
