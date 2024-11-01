@@ -27,7 +27,7 @@ const WeddingInviteDetails = () => {
         {/* Time */}
         <div className="text-center md:border-r md:border-red-300 md:pr-6">
           <h4 className="text-lg font-semibold text-gray-800 md:text-2xl">
-            12:00 PM
+            12:02 PM
           </h4>
           <h5 className="text-base italic text-gray-500 md:text-xl">
             Sharp at Noon
@@ -37,11 +37,11 @@ const WeddingInviteDetails = () => {
         {/* Venue */}
         <div className="text-center md:border-r md:border-red-300 md:px-6">
           <h4 className="text-lg font-semibold text-gray-800 md:text-2xl">
-            Nilaya
+            Venue
           </h4>
           <h5 className="text-sm italic text-gray-500 md:text-lg">
-            Hutgar, Siddapura 018956 <br />
-            address 2
+            Laxmi Niwasa <br />
+            Hutgar, Siddapura
           </h5>
         </div>
 
@@ -75,7 +75,7 @@ const WeddingInviteDetails = () => {
         <div className="text-center">
           <div className="flex items-center justify-center space-x-1">
             <h4 className="text-2xl font-bold text-pink-600 md:text-4xl">27</h4>
-            <h4 className="text-base text-gray-700 md:text-xl">RD</h4>
+            <h4 className="text-base text-gray-700 md:text-xl">TH</h4>
           </div>
           <h5 className="text-base text-gray-500 md:text-2xl">November</h5>
           <h5 className="text-sm italic text-gray-500 md:text-lg">Wednesday</h5>
@@ -84,7 +84,7 @@ const WeddingInviteDetails = () => {
         {/* Time */}
         <div className="text-center">
           <h4 className="text-lg font-semibold text-gray-800 md:text-2xl">
-            12:00 PM
+            12:02 PM
           </h4>
           <h5 className="text-base italic text-gray-500 md:text-xl">
             Sharp at Noon
@@ -94,11 +94,11 @@ const WeddingInviteDetails = () => {
         {/* Venue */}
         <div className="text-center">
           <h4 className="text-lg font-semibold text-gray-800 md:text-2xl">
-            Nilaya
+            Venue
           </h4>
           <h5 className="text-sm italic text-gray-500 md:text-lg">
-            Hutgar, Siddapura 018956 <br />
-            address 2
+            Laxmi Nivasa <br />
+            Hutgar, Siddapura
           </h5>
         </div>
       </div>
@@ -160,7 +160,7 @@ const WeddingInviteDetails = () => {
         <motion.img
           src={floralVector4}
           alt="Floral Decoration 4"
-          className="absolute right-0 w-full top-24"
+          className="absolute right-0 w-full top-20"
           initial={{ opacity: 0.8, scale: 0.9, y: -20 }}
           animate={isFloralInView ? { scale: 1, y: 0 } : {}}
           transition={{ duration: 1.5 }}

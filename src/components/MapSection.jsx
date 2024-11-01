@@ -23,12 +23,12 @@ const MapSection = () => {
       transition={{ duration: 1 }}
     >
       <motion.h2
-        className="mb-8 font-serif text-4xl text-center font-main"
+        className="mb-8 font-serif text-5xl text-center font-main"
         initial={{ y: -30, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : {}}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        Venue Location & Travel Recommendations
+        Venue Location
       </motion.h2>
 
       <div className="grid max-w-6xl gap-8 mx-auto md:grid-cols-2">
@@ -55,32 +55,26 @@ const MapSection = () => {
           animate={isInView ? { x: 0, opacity: 1 } : {}}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <h3 className="mb-4 text-2xl font-semibold font-mid">
+          <h3 className="mb-4 text-3xl font-medium font-mid">
             Travel Recommendations
           </h3>
 
           <div className="mb-4">
-            <h4 className="font-medium">Hotels Nearby:</h4>
-            <ul className="list-disc list-inside">
-              <li>Hotel 1 – 5 min from venue</li>
-              <li>Hotel 2 – 5 min from venue</li>
-              <li>Hotel 3 – 5 min from venue</li>
+            <h4 className="text-2xl font-mid ">Travel Route:</h4>
+            <ul className="text-lg font-semibold list-disc list-inside text-orange-950">
+              <li>Kumata-Bandala-Hutgar</li>
+              <li>Sirsi-Ammenalli-Kanchikai-Hutgar</li>
+              <li>Sirsi-Bandala-Hutgar</li>
             </ul>
           </div>
 
           <div className="mb-4">
-            <h4 className="font-medium">Travel Route:</h4>
-            <p>
-              Drive into Kumta road, 25 min drive to the venue via the main
-              highway.
-            </p>
-          </div>
-
-          <div className="mb-4">
-            <h4 className="font-medium">Public Transportation:</h4>
-            <p>
-              Take bus 203 or the city bus line A from Sirsi to reach the venue.
-            </p>
+            <h4 className="text-2xl font-mid">Public Transportation:</h4>
+            <ul className="text-lg font-semibold list-disc list-inside text-orange-950">
+              <li>Kumata Bus: Bandla Stop</li>
+              <li>Heggarani Bus: Kanchikai Stop</li>
+              <li>Shivalamane Bus: Hutgar Shale Stop</li>
+            </ul>
           </div>
 
           {/* Directions Button */}

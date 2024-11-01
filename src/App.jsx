@@ -32,7 +32,9 @@ function App() {
       </section>
 
       <footer className="bg-gradient-to-b from-[#FCECDD]/0 to-[#FFC288]">
-        <h1 className="py-20 text-4xl text-center"></h1>
+        <h1 className="py-10 lg:py-20 text-2xl lg:text-4xl text-center font-semibold text-[#8e4e23]">
+          "Join us to celebrate our new beginning."
+        </h1>
       </footer>
     </div>
   );

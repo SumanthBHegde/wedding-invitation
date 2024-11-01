@@ -24,7 +24,7 @@ const CollageSection = () => {
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <h2 className="mb-8 font-serif text-5xl text-center font-main">
-        Latest Photos
+        Gallery
       </h2>
 
       <div className="grid max-w-6xl grid-cols-2 gap-4 mx-auto sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
@@ -40,7 +40,7 @@ const CollageSection = () => {
           <ImageCard
             key={index}
             src={image}
-            className="h-[150px] sm:h-[200px] lg:h-[200px] lg:col-span-1 lg:row-span-1 lg:m-2" // Reduced height for larger screens
+            className="h-[200px] lg:col-span-1 lg:row-span-1 lg:m-2" // Reduced height for larger screens
             animationDelay={index * 0.2}
           />
         ))}
