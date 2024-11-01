@@ -5,26 +5,27 @@ import HeroComponent from "./components/Hero";
 import WeddingInviteDetails from "./components/WeddingInviteDetails";
 import CollageSection from "./components/CollageSection";
 import MapSection from "./components/MapSection";
+import EndingDesign from "./components/EndingDesign";
 
 function App() {
   return (
     <div className="min-h-screen App bg-custom-gradient">
       <Navbar />
-      {/* Sections for hero, details, gallery, and footer */}
+      {/* Sections for hero, details, gallery, and directions */}
       <section id="hero" className="min-h-screen mx-2">
         <HeroComponent />
       </section>
-      <div className="h-20" />
+      <EndingDesign backgroundImgIndex={2} />
 
       <section id="details" className="min-h-screen mx-2">
         <WeddingInviteDetails />
       </section>
-      <div className="h-20" />
+      <EndingDesign backgroundImgIndex={2} />
 
       <section id="gallery" className="min-h-screen mx-2">
         <CollageSection />
       </section>
-      <div className="h-20" />
+      <EndingDesign backgroundImgIndex={3} />
 
       <section id="map" className="min-h-screen mx-2">
         <MapSection />

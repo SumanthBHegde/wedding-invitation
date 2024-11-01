@@ -10,6 +10,15 @@ import floralVector4 from "./floral-vector4.png";
 import floralVector5 from "./floral-vector5.png";
 import weddingAvatarBgrm from "./wedding_avatar_bgrm.png";
 import weddingBackground3 from "./wedding_background3.png";
+import floral_line1 from "./floral_line1.png";
+import floral_line2 from "./floral_line2.png";
+import floral_line3 from "./floral_line3.png";
+import floral_line4 from "./floral_line4.png";
+import photo1 from "./Photo1.jpg";
+import photo2 from "./Photo2.jpg";
+import photo3 from "./Photo3.jpg";
+import photo4 from "./Photo4.jpg";
+import photo5 from "./Photo5.jpg";
 
 export {
   backgroundWedding1,
@@ -23,4 +32,13 @@ export {
   floralVector5,
   weddingAvatarBgrm,
   weddingBackground3,
+  floral_line1,
+  floral_line2,
+  floral_line3,
+  floral_line4,
+  photo1,
+  photo2,
+  photo3,
+  photo4,
+  photo5,
 };

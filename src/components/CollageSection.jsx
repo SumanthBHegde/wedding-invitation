@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { backgroundWedding4 as backgroundImg } from "../assets/assets";
+import {
+  backgroundWedding4 as backgroundImg,
+  photo1,
+  photo2,
+  photo3,
+  photo4,
+  photo5,
+} from "../assets/assets";
 
 const CollageSection = () => {
   const [images, setImages] = useState([
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/400",
+    photo1,
+    photo2,
+    photo3,
+    photo4,
+    photo5,
   ]);
 
   return (
@@ -24,7 +31,7 @@ const CollageSection = () => {
         {/* First large image spanning multiple rows and columns */}
         <ImageCard
           src={images[0]}
-          className="col-span-2 row-span-2 lg:col-span-3 lg:row-span-3"
+          className="col-span-2 row-span-2 h-[300px] sm:h-[350px] lg:col-span-3 lg:row-span-3 lg:h-[500px] flex justify-center items-center"
           animationDelay={0}
         />
 
@@ -33,26 +40,10 @@ const CollageSection = () => {
           <ImageCard
             key={index}
             src={image}
-            className="h-full lg:col-span-1 lg:row-span-1"
+            className="h-[150px] sm:h-[200px] lg:h-[200px] lg:col-span-1 lg:row-span-1 lg:m-2" // Reduced height for larger screens
             animationDelay={index * 0.2}
           />
         ))}
-
-        {/* Extra image for large screens */}
-        {images[4] && (
-          <ImageCard
-            src={images[4]}
-            className="hidden lg:block lg:col-span-1 lg:row-span-1"
-            animationDelay={1.2}
-          />
-        )}
-
-        {/* Additional card displayed only on large devices */}
-        <ImageCard
-          src="https://via.placeholder.com/400"
-          className="hidden lg:block lg:col-span-1 lg:row-span-1"
-          animationDelay={1.4}
-        />
       </div>
     </div>
   );

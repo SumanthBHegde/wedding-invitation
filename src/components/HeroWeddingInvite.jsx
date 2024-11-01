@@ -56,7 +56,7 @@ const HeroWeddingInvite = () => {
         transition={{ duration: 1.5 }}
       >
         <h1 className="mb-4 font-serif text-6xl font-main">
-          Manasa & Shreedhar
+          Manasa & Shridhar
         </h1>
         <p className="text-2xl font-light font-mini">We're Getting Married</p>
 

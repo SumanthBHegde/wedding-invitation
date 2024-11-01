@@ -49,7 +49,7 @@ const WeddingInviteDetails = () => {
         <div className="text-center md:pl-6">
           <div className="flex items-center justify-center space-x-1">
             <h4 className="text-2xl font-bold text-pink-600 md:text-4xl">27</h4>
-            <h4 className="text-base text-gray-700 md:text-xl">RD</h4>
+            <h4 className="text-base text-gray-700 md:text-xl">TH</h4>
           </div>
           <h5 className="text-base text-gray-500 md:text-2xl">November</h5>
           <h5 className="text-sm italic text-gray-500 md:text-lg">Wednesday</h5>
@@ -107,13 +107,17 @@ const WeddingInviteDetails = () => {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen px-4 bg-center bg-cover bg-custom-gradient"
-      style={{ backgroundImage: `url(${backgroundImg})` }}
+      className="relative flex flex-col items-center justify-center h-screen px-4 bg-center bg-cover bg-custom-gradient sm:min-h-[80vh]"
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       {/* Heading text */}
       <motion.h1
         ref={headingRef}
-        className="relative z-20 mb-8 text-3xl font-bold text-pink-700 md:text-5xl"
+        className="relative z-20 mb-8 text-3xl font-bold text-pink-700 md:text-5xl font-main"
         initial={{ opacity: 0, y: -40 }}
         animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1 }}
@@ -156,7 +160,7 @@ const WeddingInviteDetails = () => {
         <motion.img
           src={floralVector4}
           alt="Floral Decoration 4"
-          className="absolute top-0 right-0 w-full"
+          className="absolute right-0 w-full top-24"
           initial={{ opacity: 0.8, scale: 0.9, y: -20 }}
           animate={isFloralInView ? { scale: 1, y: 0 } : {}}
           transition={{ duration: 1.5 }}

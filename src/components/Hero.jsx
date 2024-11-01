@@ -46,10 +46,10 @@ const MobileHero = ({ sectionHeight }) => {
         sectionHeight={sectionHeight}
         offsetX="0"
         startY={startYMobile}
-        endY={startYMobile - 50} // Subtle movement
+        endY={startYMobile - 30} // Slower movement for foreground
         className="w-auto mx-auto h-[400px]"
       />
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-[#FCECDD]/0 to-[#FFC288]" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-[#FCECDD]/0 to-[#FFC288]" />
     </div>
   );
 };
@@ -79,7 +79,7 @@ const ParallaxBackground = ({ image, sectionHeight }) => {
   );
 };
 
-// Parallax Foreground Component
+// Parallax Foreground Component with Fade
 const ParallaxForeground = ({
   image,
   sectionHeight,
@@ -91,8 +91,15 @@ const ParallaxForeground = ({
 }) => {
   const { scrollY } = useScroll();
 
-  // Subtle scroll movement for the avatar image
+  // Slow scroll movement for the avatar image
   const y = useTransform(scrollY, [0, sectionHeight], [startY, endY]);
+
+  // Fade out when approaching the center of the screen
+  const opacity = useTransform(
+    scrollY,
+    [0, sectionHeight / 2, sectionHeight],
+    [1, 0.5, 0]
+  );
 
   return (
     <motion.div
@@ -100,6 +107,7 @@ const ParallaxForeground = ({
       style={{
         translateX: offsetX,
         translateY: y,
+        opacity: opacity,
       }}
     >
       <img
